@@ -20,22 +20,23 @@ $ source ~/.bashrc
 $ mojo version  
 
 ##### 2. git clone   
+    $ git clone
+    $ cd perl-vue-blog/frontend  
+    $ npm install  
+    $ npm run build  
 
 ##### 3. run  
-
-  i) backend の起動  
-  $ cd perl-vue-blog/backend  
-  $ perl app.pl daemon  
-
-  ii) frontend の起動  
-  $ cd perl-vue-blog/frontend  
-  $ npm install  
-  $ npm run build  
+1) Mojolicious Deamon で実行するばあい。
+   
+    i) backend の起動  
+    $ cd perl-vue-blog/backend  
+    $ perl app.pl daemon  
     
-  そく、実行するなら、下記を行う。  
-  $ npm run dev  
-  注) frontend/src/App.vue を修正しておく。  
-  const use_cgi = 0  
+    ii) frontend の起動  
+    そく、実行するなら、下記を行う。  
+    $ npm run dev  
+    注) frontend/src/App.vue を修正しておく。  
+    const use_cgi = 0  
 
   
 
