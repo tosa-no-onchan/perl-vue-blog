@@ -2,3 +2,23 @@
 
 Ubuntu 24.04 perl + Vue3 で、Web app サンプル を作ってみた。  
 
+##### 1. 開発環境の用意。  
+i) 必要なパッケージのインストール（Ubuntu 24.04）  
+$ sudo apt update  
+$ sudo apt install -y sqlite3 libsqlite3-dev cpanminus build-essential nodejs npm  
+  
+ii) Mojolicious（Perl製Webフレームワーク）のインストール  
+注) ユーザディレクトリへ、インストールする。  
+~/perl5/ 下のディレクトリーを使う。  
+  
+$ cpanm Mojolicious  
+  
+\~/perl5 用の環境変数が未設定の場合は、\~/.bashrc に追記して反映します。  
+$ echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"' >> ~/.bashrc  
+$ source ~/.bashrc  
+確認してみる。  
+$ mojo version  
+
+##### 2. git clone   
+
+
