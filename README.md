@@ -26,10 +26,19 @@ $ mojo version
     $ npm run build  
 
 ##### 3. run  
-起動方法は、2 種類あります。  
-Mojolicious Deamon として、実行するのと、  
+起動方法は、3 種類あります。  
+backend/app.pl を Deamon として、実行しておいて、  
+backend 処理として、perl-vue-blog/backend/app.pl を使うのを前提に、  
+frontend を、  
+$ npm run dev  
+で起動する。--- 方法1  
+$ npm run build  
+を行った後、ブラウザーから、frontend/dist/index.html を表示して実行する。 --- 方法2  
+
+Mojolicious Deamon も、 npm run dev も使わずに、  
 Http Server(おんちゃんの C++ Light Server が、お勧め) を起動しておいて、  
-http://xxxxx/cgi-bin/api/posts.cgi を、App.vue から、コールする方法。  
+$ npm run build で、作成された、frontend/dist/index.html を表示して、  
+http://xxxxx/index.html で、App.vue の backend 処理として、cgi-bin/api/posts.cgi を使う方法。 --- 方法3  
 
 1) Mojolicious Deamon で実行するばあい。
    
