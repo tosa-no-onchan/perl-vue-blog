@@ -64,7 +64,7 @@ http://xxxxx/index.html で、App.vue の backend 処理として、cgi-bin/api/
     const base = 'http://192.168.1.170/cgi-bin/api/posts.cgi'  
     上記の ip address を自分の環境に合わせる。  
     $ cd perl-vue-blog/frontend  
-    $ npm run dev  
+    $ npm run build  
     
     iii) ブラウザーから、http://ip-to-server/index.html  
    
