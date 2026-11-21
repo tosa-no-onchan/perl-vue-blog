@@ -26,6 +26,11 @@ $ mojo version
     $ npm run build  
 
 ##### 3. run  
+起動方法は、2 種類あります。  
+Mojolicious Deamon として、実行するのと、  
+Http Server(おんちゃんの C++ Light Server が、お勧め) を起動しておいて、  
+http://xxxxx/cgi-bin/api/posts.cgi を、App.vue から、コールする方法。  
+
 1) Mojolicious Deamon で実行するばあい。
    
     i) backend の起動  
