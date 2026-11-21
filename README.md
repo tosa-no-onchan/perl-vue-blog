@@ -20,7 +20,7 @@ $ source ~/.bashrc
 $ mojo version  
 
 ##### 2. git clone   
-    $ git clone
+    $ git clone https://github.com/tosa-no-onchan/perl-vue-blog.git  
     $ cd perl-vue-blog/frontend  
     $ npm install  
     $ npm run build  
