@@ -1,6 +1,6 @@
 # perl-vue-blog  
 
-Ubuntu 24.04 perl + Vue3 で、Web app サンプル を作ってみた。  
+Ubuntu 24.04 perl + Vue3 で、Web app サンプル (Blog/Bbs) を作ってみた。  
 
 ##### 1. 開発環境の用意。  
 i) 必要なパッケージのインストール（Ubuntu 24.04）  
