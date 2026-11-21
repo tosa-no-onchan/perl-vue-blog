@@ -38,10 +38,27 @@ http://xxxxx/cgi-bin/api/posts.cgi を、App.vue から、コールする方法�
     $ perl app.pl daemon  
     
     ii) frontend の起動  
-    そく、実行するなら、下記を行う。  
+    そく、実行するなら、下記を行う。
+    $ cd perl-vue-blog/frontend  
     $ npm run dev  
     注) frontend/src/App.vue を修正しておく。  
     const use_cgi = 0  
+
+2) cgi として実行する場合。  
+    
+    i) Http Server の、doc-root(web_root) と、 cgi-root を指定する。  
+    doc-root: /home/your-id/path-to/perl-vue-blog/frontend/dist  
+    cgi-root: /home/your-id/path-to/perl-vue-blog/backend  
+    
+    ii) frontend/src/App.vue を修正しておく。  
+    const use_cgi = 1  
+    const base = 'http://192.168.1.170/cgi-bin/api/posts.cgi'  
+    上記の ip address を自分の環境に合わせる。  
+    $ cd perl-vue-blog/frontend  
+    $ npm run dev  
+    
+    iii) ブラウザーから、http://ip-to-server/index.html  
+   
 
   
 
