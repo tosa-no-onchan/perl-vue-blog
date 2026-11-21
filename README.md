@@ -30,10 +30,8 @@ $ mojo version
   ii) frontend の起動  
   $ cd perl-vue-blog/frontend  
   $ npm install  
-  
-  もし、後で、 api/posts.cgi を、実行するなら、 build しておく。  
   $ npm run build  
-  
+    
   そく、実行するなら、下記を行う。  
   $ npm run dev  
   注) frontend/src/App.vue を修正しておく。  
