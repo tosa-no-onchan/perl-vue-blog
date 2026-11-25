@@ -13,7 +13,7 @@ my $service = Blog::Service::PostService->new(%parm);
 # CORSヘッダーの付与（開発用）
 app->hook(before_dispatch => sub ($c) {
     $c->res->headers->header('Access-Control-Allow-Origin' => '*');
-    $c->res->headers->header('Access-Control-Allow-Methods' => 'GET, POST,PUT, DELETE, OPTIONS');
+    $c->res->headers->header('Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS');
     $c->res->headers->header('Access-Control-Allow-Headers' => 'Content-Type');
     if ($c->req->method eq 'OPTIONS') {
         $c->render(text => '', status => 200);
@@ -39,7 +39,8 @@ get '/api/posts' => sub ($c) {
 post '/api/posts' => sub ($c) {
     my $json = $c->req->json;
     eval {
-        my $post = $service->create_post($json->{title}, $json->{content});
+        my $post = $service->create_post($json->{yname}, $json->{title}, $json->{content}, $json->{password}, $json->{email});
+        #my $post = $service->create_post($json->{title}, $json->{content});
         $c->render(json => $post, status => 201);
     };
     if ($@) {
@@ -64,7 +65,8 @@ put '/api/posts/:id' => sub ($c) {
     my $id = $c->param('id');
     my $json = $c->req->json;
     eval {
-        my $post = $service->update_post($id, $json->{title}, $json->{content});
+        my $post = $service->update_post($id, $json->{yname}, $json->{title}, $json->{content}, $json->{password}, $json->{email});
+        #my $post = $service->update_post($id, $json->{title}, $json->{content});
         $c->render(json => $post, status => 200);
     };
     if ($@) {

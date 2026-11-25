@@ -111,6 +111,7 @@ sub send_json {
     $self->_print_cors_headers();
     print "\r\n";
     print $json_text;
+    print "\n";
     return;
 }
 

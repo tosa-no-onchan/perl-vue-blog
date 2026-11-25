@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+#----
+# perl-vue-blog/backend/api/posts.cgi
+#----
 use strict;
 use warnings;
 use utf8;
@@ -43,22 +46,20 @@ eval {
     }
     elsif ($method eq 'POST') {
         my $body = $cgi->json_body();
-        my $post = $service->create_post($body->{title}, $body->{content});
+        my $post = $service->create_post($body->{yname}, $body->{title}, $body->{content}, $body->{password}, $body->{email});
         $cgi->send_json('201 Created', $post);
     }
     elsif ($method eq 'PUT') {
         my $id   = $query->{id};
         my $body = $cgi->json_body();
-
-        #MyApp::ToolMy::exitError("psost.cgi : #5 \$id:".$id);
-
-        my $post = $service->update_post($id, $body->{title}, $body->{content});
+        my $post = $service->update_post($id, $body->{yname}, $body->{title}, $body->{content}, $body->{password}, $body->{email});
         $cgi->send_json('200 OK', $post);
-
     }
     elsif ($method eq 'DELETE') {
         my $id = $query->{id};
-        $service->delete_post($id);
+        my $body = $cgi->json_body();
+        #$service->delete_post($id);
+        $service->delete_post($id, $body->{password});
         $cgi->send_json('200 OK', { deleted => JSON::PP::true, id => int($id) });
     }
     else {
